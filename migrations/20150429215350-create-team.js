@@ -9,13 +9,16 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       name: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       logo_image_url: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       mascot: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       created_at: {
         allowNull: false,

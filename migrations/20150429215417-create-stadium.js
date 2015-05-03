@@ -9,13 +9,24 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       name: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       city: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
       },
       image_url: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      team_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: "Teams",
+        referenceKey: "id",
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       created_at: {
         allowNull: false,

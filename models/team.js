@@ -7,8 +7,7 @@ module.exports = function (sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function (models) {
-        // TODO figure out migration
-        // this.hasOne(models.Stadium);
+        this.hasOne(models.Stadium);
       }
     }
   });

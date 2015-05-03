@@ -7,10 +7,10 @@ module.exports = function (sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function (models) {
-        // TODO figure out migration
-        // this.belongsTo(models.Team);
+        this.belongsTo(models.Team);
       }
     }
-  });
+  },
+  tableName: 'Stadiums');
   return Stadium;
 };
