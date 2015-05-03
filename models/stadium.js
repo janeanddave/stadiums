@@ -9,8 +9,8 @@ module.exports = function (sequelize, DataTypes) {
       associate: function (models) {
         this.belongsTo(models.Team);
       }
-    }
-  },
-  tableName: 'Stadiums');
+    },
+    tableName: 'Stadiums'
+  });
   return Stadium;
 };
