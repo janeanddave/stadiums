@@ -1,11 +1,10 @@
 var express = require("express");
 var db = require("./models");
+var path = require('path');
 
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('hello world!');
-});
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 require('./db/seed')(db)
   .then(function () {
