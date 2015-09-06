@@ -16,13 +16,13 @@ module.exports = function (db) {
     team_id: 1,
     name: 'AT&T Park',
     city: 'San Francisco',
-    image_url: 'http://en.wikipedia.org/wiki/AT%26T_Park#/media/File:ATT_Sunset_Panorama.jpg'
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/ATT_Sunset_Panorama.jpg/2880px-ATT_Sunset_Panorama.jpg'
   }, {
     id: 2,
     team_id: 2,
     name: 'Fenway Park',
     city: 'Boston',
-    image_url: 'http://en.wikipedia.org/wiki/Fenway_Park#/media/File:Fenway_from_Legend%27s_Box.jpg'
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Fenway_from_Legend%27s_Box.jpg'
   }];
 
   var seed = function (model, data) {
