@@ -24,6 +24,7 @@ var App = React.createClass({
 var routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="stadiums" handler={Stadiums}/>
+    <Route name="stadium" path="stadiums/:stadium_id" handler={StadiumDetail}/>
     <Route name="teams" handler={Teams}/>
     <DefaultRoute handler={Stadiums}/>
   </Route>

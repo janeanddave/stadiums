@@ -12,6 +12,13 @@ app.get("/api/stadiums", function (req, res) {
   });
 });
 
+app.get("/api/stadiums/:id", function (req, res) {
+  var id = req.params.id;
+  db.Stadium.find(id).then(function (stadiums) {
+    res.json(stadiums);
+  });
+});
+
 app.get("/api/teams", function (req, res) {
   db.Team.findAll().then(function (teams) {
     res.json(teams);
