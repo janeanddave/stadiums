@@ -1,63 +1,34 @@
+var Router = ReactRouter;
+var DefaultRoute = Router.DefaultRoute;
+var Link = Router.Link;
+var Route = Router.Route;
+var RouteHandler = Router.RouteHandler;
 
-var Stadiums = React.createClass({
-  getStadiums: function () {
-    $.ajax({
-      url: "/api/stadiums",
-      dataType: 'json',
-      cache: false,
-      success: function (data) {
-        this.setState({stadiums: data});
-      }.bind(this)
-    });
-  },
-  componentDidMount: function () {
-    this.getStadiums();
-  },
-  getInitialState: function () {
-    return {
-      stadiums: []
-    };
-  },
+var App = React.createClass({
   render: function () {
     return (
-      <div class="stadiums">
-        <StadiumList stadiums={ this.state.stadiums }/>
+      <div>
+        <header>
+          <ul>
+            <li><Link to="stadiums">Stadiums</Link></li>
+            <li><Link to="teams">Teams</Link></li>
+          </ul>
+        </header>
+
+        <RouteHandler/>
       </div>
     );
   }
 });
 
-var StadiumList = React.createClass({
-  render: function () {
-    var stadiums = this.props.stadiums.map(function (stadium, index) {
-      return (
-        <Stadium
-          name={ stadium.name }
-          city={ stadium.city }
-          image_url={ stadium.image_url } />
-      );
-    });
-    return (
-      <div class="stadiumList">
-        { stadiums }
-      </div>
-    );
-  }
-});
-
-var Stadium = React.createClass({
-  render: function () {
-    return (
-      <div class="stadium">
-        <h2>{ this.props.name }</h2>
-        <h3>{ this.props.city }</h3>
-        <img src={ this.props.image_url } />
-      </div>
-    );
-  }
-});
-
-React.render(
-  <Stadiums/>,
-  document.getElementById('content')
+var routes = (
+  <Route name="app" path="/" handler={App}>
+    <Route name="stadiums" handler={Stadiums}/>
+    <Route name="teams" handler={Teams}/>
+    <DefaultRoute handler={Stadiums}/>
+  </Route>
 );
+
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.getElementById("content"));
+});
