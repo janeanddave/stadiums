@@ -10,7 +10,8 @@ module.exports = function (sequelize, DataTypes) {
         this.belongsTo(models.Team);
       }
     },
-    tableName: 'Stadiums'
+    tableName: 'Stadiums',
+    underscored: true
   });
   return Stadium;
 };

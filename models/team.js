@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
       associate: function (models) {
         this.hasOne(models.Stadium);
       }
-    }
+    },
+    underscored: true
   });
   return Team;
 };
