@@ -26,6 +26,7 @@ var routes = (
     <Route name="stadiums" handler={Stadiums}/>
     <Route name="stadium" path="stadiums/:stadium_id" handler={StadiumDetail}/>
     <Route name="teams" handler={Teams}/>
+    <Route name="team" path="teams/:team_id" handler={TeamDetail}/>
     <DefaultRoute handler={Stadiums}/>
   </Route>
 );

@@ -25,6 +25,13 @@ app.get("/api/teams", function (req, res) {
   });
 });
 
+app.get("/api/teams/:id", function (req, res) {
+  var id = req.params.id;
+  db.Team.find(id).then(function (teams) {
+    res.json(teams);
+  });
+});
+
 require('./db/seed')(db)
   .then(function () {
     var port = 3000;
